@@ -103,7 +103,7 @@ RUN set -ex; \
     )"; \
     apk add --no-network --virtual .nextcloud-phpext-rundeps $runDeps; \
     apk del --no-network .build-deps
-
+ 
 # set recommended PHP.ini settings
 # see https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#enable-php-opcache
 ENV PHP_MEMORY_LIMIT 512M
@@ -172,4 +172,4 @@ COPY *.sh upgrade.exclude /
 COPY config/* /usr/src/nextcloud/config/
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["%%CMD%%"]
+CMD ["%%CMD%%"] 
